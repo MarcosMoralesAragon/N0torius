@@ -5,3 +5,15 @@
   color: gray;
   margin: 20px
 }
+.lista-cursos{
+  margin: auto
+}
+.lista-cursos-chips{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.chip{
+  background-color: #090a0e;
+}

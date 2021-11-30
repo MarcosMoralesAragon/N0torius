@@ -1,0 +1,17 @@
+<ion-content mode="md" [fullscreen]="true">
+  <ion-card class="card-presentacion">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center"><b>Bienvenido de vuelta a {{nombreCurso}}</b></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label><i><b>Asignaturas</b></i></ion-label>
+      <div *ngFor="let asignatura of asignaturas">
+        <ion-chip class="chip">
+          <ion-label>{{asignatura.nombre}}</ion-label>
+        </ion-chip>
+        <ion-label> {{asignatura.descripcion}}</ion-label>
+      </div>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>
