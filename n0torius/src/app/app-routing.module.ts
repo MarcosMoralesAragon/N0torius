@@ -19,6 +19,13 @@ const routes: Routes = [
     path: 'curso/:id',
     loadChildren: () => import('./pages/curso/curso.module').then( m => m.CursoPageModule)
   },
+  {
+    path: 'crear',
+    loadChildren: () => import('./pages/crear/crear.module').then( m => m.CrearPageModule)
+  },{
+    path: 'crear/:id',
+    loadChildren: () => import('./pages/crear/crear.module').then( m => m.CrearPageModule)
+  },
 ];
 
 @NgModule({

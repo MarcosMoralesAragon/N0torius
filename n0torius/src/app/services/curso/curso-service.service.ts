@@ -10,14 +10,14 @@ export class CursoServiceService {
   cursoQueMostrar
   cursos: Curso[] = [
     {
-        "id": 1,
+        "id": 0,
         "nombre": "1ºDAM"
     },
     {
-        "id": 2,
+        "id": 1,
         "nombre": "2ºDAM"
     },{
-        "id": 3,
+        "id": 2,
         "nombre": "2ºBach"
     }
 ]

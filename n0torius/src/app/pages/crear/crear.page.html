@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crear</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios">
+  <ion-card class="card-crear">
+
+    <ng-container *ngIf="!idCurso">
+
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-input placeholder="2ºDAM" [(ngModel)]="valorCampos[0]"></ion-input>
+      </ion-item>
+
+    </ng-container>
+
+    <ng-container *ngIf="idCurso">
+
+      <ion-segment value="examen">
+        <ion-segment-button value="asignatura" (click)="creandoAsignatura()">
+          <ion-label>Asignatura</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="examen"(click)="creandoExamen()">
+          <ion-label>Examen</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <ng-container *ngIf="queSeEstaCreando == 'Examen'">
+
+        <ion-item>
+          <ion-label>* Nombre</ion-label>
+          <ion-input placeholder="Examen tema 2" [(ngModel)]="valorCampos[0]"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>* Asignatura</ion-label>
+          <ion-select class="multiseleccion" multiple="false" cancelText="Cancelar" okText = "Aceptar">
+            <ion-select-option value="bacon">asignatura</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nota</ion-label>
+          <ion-input placeholder="9" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Opiniones sobre el examen</ion-label>
+          <ion-textarea placeholder="¿Sensaciones del examen?"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Valoración del profesor</ion-label>
+          <ion-textarea placeholder="Cosas a mejorar"></ion-textarea>
+        </ion-item>
+
+      </ng-container>
+
+      <ng-container *ngIf="queSeEstaCreando == 'Asignatura'">
+
+        <ion-item>
+          <ion-label>Siglas</ion-label>
+          <ion-input placeholder="AD"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Descripción</ion-label>
+          <ion-input placeholder="Acceso a datos"></ion-input>
+        </ion-item>
+
+      </ng-container>
+
+    </ng-container>
+
+  </ion-card>
+  <div class="grid-botones">
+    <ion-button (click)="crear()">Crear</ion-button>
+    <ion-button (click)="volver()" color="danger">Cancelar</ion-button>
+  </div>
+</ion-content>

@@ -19,7 +19,9 @@ export class HomePage {
   }
 
   irACurso(id: number){
-    console.log(id)
     this.router.navigateByUrl('/curso/'+ id);
+  }
+  crearCurso(){
+    this.router.navigateByUrl('/crear')
   }
 }
