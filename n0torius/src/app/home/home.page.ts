@@ -16,6 +16,7 @@ export class HomePage {
   constructor(private cursoService: CursoServiceService,
               private router:Router) {
     this.cursos = cursoService.getCursos()
+    console.log("aqui")
   }
 
   irACurso(id: number){

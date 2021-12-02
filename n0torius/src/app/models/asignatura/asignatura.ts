@@ -5,4 +5,7 @@ export class Asignatura {
     nombre: string;
     descripcion:string;
     idCurso: number;
+    cantidadDeExamenes?: number;
+
+    constructor(){}
 }

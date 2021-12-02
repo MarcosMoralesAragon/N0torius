@@ -26,6 +26,13 @@ const routes: Routes = [
     path: 'crear/:id',
     loadChildren: () => import('./pages/crear/crear.module').then( m => m.CrearPageModule)
   },
+  {
+    path: 'lista',
+    loadChildren: () => import('./pages/lista/lista/lista.module').then( m => m.ListaPageModule)
+  },{
+    path: 'lista/:id',
+    loadChildren: () => import('./pages/lista/lista/lista.module').then( m => m.ListaPageModule)
+  }
 ];
 
 @NgModule({

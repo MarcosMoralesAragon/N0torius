@@ -1,4 +1,7 @@
 <ion-content mode="md" [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-card class="card-presentacion">
     <ion-card-header>
       <ion-card-title class="ion-text-center"><b>Bienvenido de vuelta a {{nombreCurso}}</b></ion-card-title>
@@ -20,20 +23,18 @@
       <ion-card-title class="ion-text-center">Tareas recientes</ion-card-title>
     </ion-card-header>
     <ion-slides mode="ios">
-      <ion-slide>
-        <ion-card-header>
-          <ion-card-subtitle>nombreAsignatura</ion-card-subtitle>
-          <ion-card-title>nombreTarea</ion-card-title>
-        </ion-card-header>
-      </ion-slide>
-      <ion-slide>
-        <ion-card-header>
-          <ion-card-subtitle>nombreAsignatura</ion-card-subtitle>
-          <ion-card-title>nombreTarea</ion-card-title>
-        </ion-card-header>
-      </ion-slide>
+      <ng-container *ngFor="let examen of examenes">
+        <ion-slide>
+          <ion-card-header>
+            <ion-card-subtitle>{{nombreAsignatura(examen.idAsignatura)}}</ion-card-subtitle>
+            <ion-card-title>{{examen.nombre}}</ion-card-title>
+          </ion-card-header>
+        </ion-slide>
+      </ng-container>
+      
     </ion-slides>
   </ion-card>
+  <pre>{{asignaturas|json}}</pre>
 </ion-content>
 <ion-footer>
   <ion-toolbar>

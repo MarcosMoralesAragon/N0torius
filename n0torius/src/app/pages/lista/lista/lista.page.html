@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Back</ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-wrap">Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="md">
+  <ion-list class="lista-ejemplo" *ngIf="queListar == 'Asignaturas'">
+    <ion-item>
+      <ion-label>Asignatura</ion-label>
+      <ion-badge color="danger">Cantidad de examenes</ion-badge>
+    </ion-item>
+  </ion-list>
+  <ion-list class="lista">
+    <ng-container *ngIf="queListar == 'Asignaturas'">
+      <ng-container *ngFor="let items of lista">
+        <ion-item>
+          <ion-label>{{items.nombre}}</ion-label>
+          <ion-badge color="danger">{{items.cantidadDeExamenes}}</ion-badge>
+        </ion-item>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="queListar == 'Examenes'">
+      <ng-container >
+        <ion-item>
+          <ion-label>Examenes completos</ion-label>
+          <ion-badge color="success">{{examenesCompletos.length}}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>Examanes sin nota</ion-label>
+          <ion-badge color="danger">{{examenesSinNota.length}}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>Examenes sin opinion</ion-label>
+          <ion-badge color="tertiary">{{examenesSinOpinion.length}}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>Examenes sin valoracion</ion-label>
+          <ion-badge color="warning">{{examenesSinValoracion.length}}</ion-badge>
+        </ion-item>
+      </ng-container>
+    </ng-container>
+  </ion-list>
+</ion-content>
