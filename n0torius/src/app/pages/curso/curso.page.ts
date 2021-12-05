@@ -74,6 +74,9 @@ export class CursoPage implements OnInit,AfterViewInit {
   irACrear(){
     this.router.navigateByUrl('/crear/'+  this.idCurso)
   }
+  irAAsignatura(idAsignatura : number){
+    this.router.navigateByUrl('/asignatura/' + idAsignatura)
+  }
   nombreAsignatura(id : number){
     var asignatura: Asignatura []
     asignatura = this.asignaturas.filter(asignatura => asignatura.id == id)

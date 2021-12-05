@@ -8,14 +8,14 @@
     </ion-card-header>
     <ion-card-content>
       <ion-label class="asignaturas">Asignaturas :</ion-label>
-      <div class="grid">
         <ng-container *ngFor="let asignatura of asignaturas">
-          <ion-chip class="chip ion-text-center">
-            <ion-label>{{asignatura.nombre}}</ion-label>
-          </ion-chip>
-          <ion-label> {{asignatura.descripcion}}</ion-label>
+          <ion-item (click)="irAAsignatura(asignatura.id)">
+            <ion-chip class="chip ion-text-center">
+              <ion-label>{{asignatura.nombre}}</ion-label>
+            </ion-chip>
+            <ion-label>{{asignatura.descripcion}}</ion-label>
+          </ion-item>
         </ng-container>
-      </div>
     </ion-card-content>
   </ion-card>
   <ion-card class="tareas-recientes">
@@ -34,7 +34,6 @@
       
     </ion-slides>
   </ion-card>
-  <pre>{{asignaturas|json}}</pre>
 </ion-content>
 <ion-footer>
   <ion-toolbar>

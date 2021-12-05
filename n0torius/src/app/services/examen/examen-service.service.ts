@@ -48,4 +48,7 @@ export class ExamenServiceService {
   getExamenes(){
     return this.examenes
   }
+  addExamen(examenNuevo : Examen){
+    this.examenes.push(examenNuevo)
+  }
 }

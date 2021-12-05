@@ -40,16 +40,16 @@ export class ListaPage implements OnInit {
   }
 
   asignacionEstadoExamenes(examen : Examen){
-    if(examen.nota == undefined){
+    if(!examen.nota){
       this.examenesSinNota.push(examen)
     }
-    if(examen.opinionesSobreElExamen == undefined){
+    if(!examen.opinionesSobreElExamen){
       this.examenesSinOpinion.push(examen)
     }
-    if(examen.valoracionDelProfesor == undefined){
+    if(!examen.valoracionDelProfesor){
       this.examenesSinValoracion.push(examen)
     }
-    if((examen.nota != undefined) && (examen.opinionesSobreElExamen != undefined) && (examen.valoracionDelProfesor != undefined)){
+    if((examen.nota) && (examen.opinionesSobreElExamen) && (examen.valoracionDelProfesor)){
       this.examenesCompletos.push(examen)
     }
   }

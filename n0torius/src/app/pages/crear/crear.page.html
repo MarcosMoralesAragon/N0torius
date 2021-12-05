@@ -72,6 +72,13 @@
     </ng-container>
 
   </ion-card>
+  <ng-container *ngIf="mensajeCamposObligatoriosVacios != '' ">
+    <ion-card class="card-obligatorio">
+      <ion-card-content class="mensajeCamposObligatorios">
+        {{mensajeCamposObligatoriosVacios}}
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
   <div class="grid-botones">
     <ion-button (click)="crear()">Crear</ion-button>
     <ion-button (click)="volver()" color="danger">Cancelar</ion-button>

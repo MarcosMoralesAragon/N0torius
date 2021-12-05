@@ -32,6 +32,14 @@ const routes: Routes = [
   },{
     path: 'lista/:id',
     loadChildren: () => import('./pages/lista/lista/lista.module').then( m => m.ListaPageModule)
+  },
+  {
+    path: 'asignatura',
+    loadChildren: () => import('./pages/asignatura/asignatura.module').then( m => m.AsignaturaPageModule)
+  },
+  {
+    path: 'asignatura/:id',
+    loadChildren: () => import('./pages/asignatura/asignatura.module').then( m => m.AsignaturaPageModule)
   }
 ];
 

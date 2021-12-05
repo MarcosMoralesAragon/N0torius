@@ -6,4 +6,6 @@ export class Examen {
     valoracionDelProfesor?: string
     idCurso: number
     idAsignatura: number
+
+    constructor(){}
 }
