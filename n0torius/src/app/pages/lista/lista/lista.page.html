@@ -1,7 +1,7 @@
-<ion-header>
+<ion-header mode="ios">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button>Back</ion-back-button>
+      <ion-back-button color="secondary">Back</ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-wrap">Lista</ion-title>
   </ion-toolbar>
@@ -17,7 +17,7 @@
   <ion-list class="lista">
     <ng-container *ngIf="queListar == 'Asignaturas'">
       <ng-container *ngFor="let items of lista">
-        <ion-item>
+        <ion-item (click)="irAAsignatura(items.id)">
           <ion-label>{{items.nombre}}</ion-label>
           <ion-badge color="danger">{{items.cantidadDeExamenes}}</ion-badge>
         </ion-item>

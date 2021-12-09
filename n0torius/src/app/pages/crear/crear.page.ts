@@ -106,7 +106,7 @@ export class CrearPage implements OnInit {
       examen.valoracionDelProfesor = this.valorCampos[4]
     }
 
-    examen.idCurso = this.asignaturaService.getAsignaturas().find(asignatura => asignatura.id == this.valorCampos[0]).idCurso
+    examen.idCurso = this.asignaturaService.getAsignaturas().find(asignatura => asignatura.id == this.valorCampos[1]).idCurso
     examen.idAsignatura = this.valorCampos[1]
     return examen
   }

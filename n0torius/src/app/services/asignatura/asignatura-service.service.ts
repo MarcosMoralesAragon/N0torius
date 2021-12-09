@@ -83,12 +83,6 @@ export class AsignaturaServiceService {
     }
   ]
   constructor(private examenService : ExamenServiceService) {
-    var examenes:Examen[] = []
-    for (let index = 0; index < this.asignaturas.length; index++) {
-      examenes = examenService.getExamenes()
-      var id = this.asignaturas[index].id
-      this.asignaturas[index].cantidadDeExamenes = examenes.filter( examen => examen.idAsignatura == id).length
-    }
   }
 
   getAsignaturas(){
@@ -97,7 +91,15 @@ export class AsignaturaServiceService {
   }
 
   addAsignatura(asignatura : Asignatura){
-    this.asignaturas = [...this.asignaturas,asignatura]
-    console.log(this.asignaturas)
+    this.asignaturas.push(asignatura)
+  }
+
+  conteoExamenesDeCadaAsignatura(){
+    var examenes:Examen[] = []
+    for (let index = 0; index < this.asignaturas.length; index++) {
+      examenes = this.examenService.getExamenes()
+      var id = this.asignaturas[index].id
+      this.asignaturas[index].cantidadDeExamenes = examenes.filter( examen => examen.idAsignatura == id).length
+    }
   }
 }

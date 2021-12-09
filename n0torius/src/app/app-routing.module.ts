@@ -40,6 +40,22 @@ const routes: Routes = [
   {
     path: 'asignatura/:id',
     loadChildren: () => import('./pages/asignatura/asignatura.module').then( m => m.AsignaturaPageModule)
+  },
+  {
+    path: 'examen',
+    loadChildren: () => import('./pages/examen/examen.module').then( m => m.ExamenPageModule)
+  },
+  {
+    path: 'examen/:id',
+    loadChildren: () => import('./pages/examen/examen.module').then( m => m.ExamenPageModule)
+  },
+  {
+    path: 'editar',
+    loadChildren: () => import('./pages/editar/editar.module').then( m => m.EditarPageModule)
+  },
+  {
+    path: 'editar/:id',
+    loadChildren: () => import('./pages/editar/editar.module').then( m => m.EditarPageModule)
   }
 ];
 

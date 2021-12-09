@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="secondary">Back</ion-back-button>
+    </ion-buttons>
+    <ion-title>Examen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="md">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{examen.nombre}}</ion-card-title>
+      <ion-card-title>{{asignatura.nombre}} - {{asignatura.descripcion}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle *ngIf="examen.nota != undefined">Nota del examen : {{examen.nota}}</ion-card-subtitle>
+      <ion-card-subtitle *ngIf="examen.nota == undefined">Sin calificación todavía</ion-card-subtitle>
+
+      <ion-card-subtitle *ngIf="examen.opinionesSobreElExamen != undefined">Opiniones del examen : {{examen.opinionesSobreElExamen}}</ion-card-subtitle>
+      <ion-card-subtitle *ngIf="examen.opinionesSobreElExamen == undefined">Todavía no se han añadido las opiniones</ion-card-subtitle>
+
+      <ion-card-subtitle *ngIf="examen.valoracionesDelProfesor != undefined">Valoraciones del profesor : {{examen.valoracionesDelProfesor}}</ion-card-subtitle>
+      <ion-card-subtitle *ngIf="examen.valoracionesDelProfesor == undefined">A la espera de valoración del profesor</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+  <div class="grid-botones" mode="ios">
+    <ion-button (click)="editar()" color="warning">
+      Editar
+    </ion-button>
+    <ion-button (click)="presentAlert()" color="danger">
+      Borrar  
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,9 +1,37 @@
-<ion-header>
+<ion-header mode="ios">
   <ion-toolbar>
-    <ion-title>asignatura</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="secondary">Back</ion-back-button>
+    </ion-buttons>
+    <ion-title>{{asignatura.nombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<ion-label>{{asignatura.nombre}}</ion-label>
+<ion-content mode="md">
+  <ion-card>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-label>Nota</ion-label>
+      <ion-button shape="round">Comentarios</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-list>
+      <ng-container *ngFor="let examen of examenes">
+        <ion-item (click)="irAExamen(examen.id)">
+          <ion-label>{{examen.nombre}}</ion-label>
+          <ion-label *ngIf="examen.nota == undefined"><ion-icon name="close-circle"></ion-icon></ion-label>
+          <ion-label *ngIf="suspenso(examen.nota)"><ion-badge color="danger">{{examen.nota}}</ion-badge></ion-label>
+          <ion-label *ngIf="cinco(examen.nota)"><ion-badge color="warning">{{examen.nota}}</ion-badge></ion-label>
+          <ion-label *ngIf="bien(examen.nota)"><ion-badge color="secondary">{{examen.nota}}</ion-badge></ion-label>
+          <ion-label *ngIf="notable(examen.nota)"><ion-badge color="tertiary" mode="ios">{{examen.nota}}</ion-badge></ion-label>
+          <ion-label *ngIf="sobreSaliente(examen.nota)"><ion-badge color="success" mode="ios">{{examen.nota}}</ion-badge></ion-label>
+          <ion-button (click)="onClick()" shape="round" *ngIf="(examen.opinionesSobreElExamen == undefined) && (examen.valoracionDelProfesor == undefined)"><ion-icon name="close-outline"></ion-icon></ion-button>
+          <ion-button (click)="onClick()" shape="round" *ngIf="(examen.opinionesSobreElExamen != undefined) && (examen.valoracionDelProfesor == undefined)">Opinion del examen</ion-button>
+          <ion-button (click)="onClick()" shape="round" *ngIf="(examen.opinionesSobreElExamen == undefined) && (examen.valoracionDelProfesor != undefined)">Valoración del examen</ion-button>
+          <ion-button (click)="onClick()" shape="round" *ngIf="(examen.opinionesSobreElExamen != undefined) && (examen.valoracionDelProfesor != undefined)">Comentarios</ion-button>       
+        </ion-item>
+      </ng-container>
+    </ion-list>
+  </ion-card>
 </ion-content>

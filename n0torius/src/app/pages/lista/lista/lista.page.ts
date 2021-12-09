@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { empty } from 'rxjs';
 import { Examen } from 'src/app/models/examen/examen';
 import { AsignaturaServiceService } from 'src/app/services/asignatura/asignatura-service.service';
@@ -22,6 +22,7 @@ export class ListaPage implements OnInit {
   examenesSinValoracion:Examen[]  = []
 
   constructor(private activatedRoute : ActivatedRoute,
+              private router: Router,
               private listaService : ListaService,
               private examenService : ExamenServiceService,
               private asignaturaService : AsignaturaServiceService) { }
@@ -30,13 +31,19 @@ export class ListaPage implements OnInit {
     this.idCurso = this.activatedRoute.snapshot.paramMap.get('id')
     this.queListar = this.listaService.saberQueListar()
     if(this.queListar == "Asignaturas"){
+      this.asignaturaService.conteoExamenesDeCadaAsignatura()
       this.lista = this.asignaturaService.getAsignaturas().filter(asignatura => asignatura.idCurso == this.idCurso)
+      console.log(this.lista)
     } else {
       this.lista = this.examenService.getExamenes()
       for (let index = 0; index < this.lista.length; index++) {
         this.asignacionEstadoExamenes(this.lista[index])
       }
     }
+  }
+
+  irAAsignatura(idAsignatura : number){
+    this.router.navigateByUrl('/asignatura/' + idAsignatura)
   }
 
   asignacionEstadoExamenes(examen : Examen){

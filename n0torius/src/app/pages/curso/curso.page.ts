@@ -16,7 +16,7 @@ import { ListaService } from 'src/app/services/lista/lista.service';
   templateUrl: './curso.page.html',
   styleUrls: ['./curso.page.scss'],
 })
-export class CursoPage implements OnInit,AfterViewInit {
+export class CursoPage implements OnInit{
 
   asignaturas: Asignatura[] = []
   examenes: Examen[] = []
@@ -82,24 +82,15 @@ export class CursoPage implements OnInit,AfterViewInit {
     asignatura = this.asignaturas.filter(asignatura => asignatura.id == id)
     return asignatura[0].descripcion
   }
-  doRefresh(event) {
-    console.log('Begin async operation');
-    setTimeout(() => {
-      this.asignaturas = this.asignaturaService.getAsignaturas().filter(curso => curso.idCurso == +this.idCurso)
-      this.examenes = this.examenService.getExamenes().filter(examen => examen.idCurso == this.idCurso).reverse()
-      console.log('Async operation has ended');
-      event.target.complete();
-      console.log(this.asignaturas)
-    }, 0);
-  }
 
   ngOnInit() {
-    
-  }
-  ngAfterViewInit(){
     this.idCurso = this.activatedRoute.snapshot.paramMap.get('id')
     this.nombreCurso = this.cursoService.getNombreCurso(+this.idCurso)
-    this.examenes = this.examenService.getExamenes().filter(examen => examen.idCurso == this.idCurso).reverse()
+    this.examenes = this.examenService.getExamenes().filter(examen => examen.idCurso == +this.idCurso).reverse()
     this.asignaturas = this.asignaturaService.getAsignaturas().filter(curso => curso.idCurso == +this.idCurso)
+  }
+  ionViewWillEnter(){
+    this.asignaturas = this.asignaturaService.getAsignaturas().filter(curso => curso.idCurso == +this.idCurso)
+    this.examenes = this.examenService.getExamenes().filter(examen => examen.idCurso == +this.idCurso).reverse()
   }
 }

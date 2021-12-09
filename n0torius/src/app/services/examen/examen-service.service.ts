@@ -19,12 +19,13 @@ export class ExamenServiceService {
       "id": 1,
       "nombre": "Tema 2",
       "idCurso": 1,
-      "idAsignatura": 4
+      "idAsignatura": 4,
     },{
       "id": 2,
       "nombre": "Tema 3",
       "idCurso": 1,
-      "idAsignatura": 4
+      "idAsignatura": 4,
+      "nota" : 9
     },{
       "id": 3,
       "nombre": "Tema 4",
@@ -50,5 +51,8 @@ export class ExamenServiceService {
   }
   addExamen(examenNuevo : Examen){
     this.examenes.push(examenNuevo)
+  }
+  borrarExamen(idExamen : number){
+    this.examenes.splice(idExamen, 1)
   }
 }
