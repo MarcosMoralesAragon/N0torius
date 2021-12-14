@@ -43,3 +43,7 @@ N0torius es un sistema de gestión de notas para el ambito académico. Nos permi
 ![img.png](capturas/crear-asignatura.png)
 ![img.png](capturas/crear-examen.png)
 ![img.png](capturas/crear-examen-ventana.png)
+
+## Esquema
+
+![img.png](capturas/esquema.png)
