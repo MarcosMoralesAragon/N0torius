@@ -16,7 +16,7 @@ Inicio de la aplicacion
 
 Inicio de curso 
 
-![img.png](capturas/inicio.curso.png)
+![img.png](capturas/inicio-curso.png)
 
 Inicio asignatura
 
