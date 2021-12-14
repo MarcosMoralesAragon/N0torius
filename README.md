@@ -1,6 +1,12 @@
 # N0torius
 
-N0torius es un sistema de gestión de notas para el ambito académico. Nos permite crear : cursos, asignaturas y examenes . Aparte los examenes son editables y pueden ser borrados
+## Funcionamiento
+
+N0torius es una aplicación desarollada en ionic para el proyecto del primer trimestre de AD.
+
+N0torius es un gestor académico que nos permite crear cursos, asignaturas y examenes. Estos ultimos pueden ser borrados y editados.
+
+La aplicación tiene como objetivo 
 
 |            | Cantidad|
 |------------|---------|
