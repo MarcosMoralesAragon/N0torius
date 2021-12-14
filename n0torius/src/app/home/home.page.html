@@ -1,3 +1,5 @@
+
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center">
@@ -7,6 +9,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  
+<ion-content [fullscreen]="true" mode="md">
+  <h4 class="ion-text-center">Hola {{nombreUsuario}}</h4>
+  <p class="texto-simple-content">¿A que curso quieres acceder?</p>
+  <div class="lista-cursos">
+    <ng-container *ngFor="let curso of cursos">
+      <ion-card class="cursos" (click)="irACurso(curso.id)">
+        {{curso.nombre}}
+      </ion-card>
+    </ng-container>
+  </div>
+  <p class="texto-simple-content">¿Tienes un nuevo curso?</p>
+  <ion-card class="crear-curso" (click)="crearCurso()">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center"><b>Añadir curso nuevo</b></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      ¿Un nuevo curso? Añadelo y comienza a tomar notas y registro sobre tus examenes
+    </ion-card-content>
+  </ion-card>
 </ion-content>

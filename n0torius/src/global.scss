@@ -24,3 +24,14 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400&display=swap');
+
+.action-sheet-group{
+    --background: #50c8ff !important;
+}
+// FUENTES
+@font-face {
+    font-family: 'Mi fuente';
+    src: url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+}

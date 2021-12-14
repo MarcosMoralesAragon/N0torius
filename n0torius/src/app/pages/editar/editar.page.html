@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-label>* Nombre</ion-label>
+      <ion-input placeholder="Examen tema 2" [(ngModel)]="valorCampos[0]"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>* Asignatura</ion-label>
+      <ion-select class="multiseleccion" multiple="false" cancelText="Cancelar" okText = "Aceptar" [(ngModel)]="valorCampos[1]">
+        <ng-container *ngFor="let asignatura of asignaturas">
+          <ion-select-option value="{{asignatura.id}}">{{asignatura.nombre}}</ion-select-option>
+        </ng-container>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nota</ion-label>
+      <ion-input placeholder="9" type="number" [(ngModel)]="valorCampos[2]"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Opiniones sobre el examen</ion-label>
+      <ion-textarea placeholder="¿Sensaciones del examen?" [(ngModel)]="valorCampos[3]"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Valoración del profesor</ion-label>
+      <ion-textarea placeholder="Cosas a mejorar" [(ngModel)]="valorCampos[4]"></ion-textarea>
+    </ion-item>
+  </ion-card>
+  <div class="grid-botones">
+    <ion-button (click)="editar()">Editar</ion-button>
+    <ion-button (click)="volver()" color="danger">Cancelar</ion-button>
+  </div>
+</ion-content>
