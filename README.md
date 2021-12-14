@@ -14,6 +14,9 @@ La aplicación tiene como objetivo
 |Servicios   |    5    |
 |Modelos     |    3    |
 
+[![video_explicativo](/capturas/video.jpg)](https://youtu.be/EAXtfHgtRBg)
+
+
 ## Capturas
 
 ### Inicio de la aplicacion 
