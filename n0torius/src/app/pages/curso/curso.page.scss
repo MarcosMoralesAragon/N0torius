@@ -1,0 +1,39 @@
+.card-presentacion , .tareas-recientes{
+    border-radius: 5px 20px 50px 20px;
+    margin-top: 25px;
+}
+.chip{
+    background-color: #1c0d02;
+    color: #f4f4f4;
+}
+ion-label{
+    color: #f4f4f4;
+}
+
+.grid-footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.icono-footer{
+    margin: auto;
+    font-size: 2rem;
+    background-color: rgba(128, 128, 128, 0.151);
+    border-radius: 40%;
+}
+.flex-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.lol{
+    background-color: wheat;
+}
+.icono-listar{
+    --background: #f4f4f4 !important;
+}
+ion-item{
+    --background: transparent;
+}

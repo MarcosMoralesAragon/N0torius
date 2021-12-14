@@ -1,0 +1,48 @@
+<ion-content mode="md" [fullscreen]="true">
+  <ion-card class="card-presentacion">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center"><b>Bienvenido de vuelta a {{nombreCurso}}</b></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label class="asignaturas">Asignaturas :</ion-label>
+        <ng-container *ngFor="let asignatura of asignaturas">
+          <ion-item (click)="irAAsignatura(asignatura.id)">
+            <ion-chip class="chip ion-text-center">
+              <ion-label>{{asignatura.nombre}}</ion-label>
+            </ion-chip>
+            <ion-label>{{asignatura.descripcion}}</ion-label>
+          </ion-item>
+        </ng-container>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="tareas-recientes">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Examenes recientes</ion-card-title>
+    </ion-card-header>
+    <ion-slides mode="ios">
+      <ng-container *ngFor="let examen of examenes">
+        <ion-slide>
+          <ion-card-header>
+            <ion-card-subtitle>{{nombreAsignatura(examen.idAsignatura)}}</ion-card-subtitle>
+            <ion-card-title>{{examen.nombre}}</ion-card-title>
+          </ion-card-header>
+        </ion-slide>
+      </ng-container>
+      
+    </ion-slides>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="grid-footer">
+      <ion-icon class="icono-footer" name="arrow-undo-outline" (click)="volverHome()"></ion-icon>
+      <ion-icon class="icono-footer icono-crear" name="create-outline" (click)="irACrear()"></ion-icon>
+      <ion-icon mode="ios" class="icono-footer icono-listar" name="file-tray-full-outline" (click)="presentActionSheet()"></ion-icon>
+    </div>
+    <div class="flex-footer">
+      <ion-label>Volver</ion-label>
+      <ion-label>Crear</ion-label>
+      <ion-label>Listar</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-footer>

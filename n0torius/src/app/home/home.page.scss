@@ -2,6 +2,33 @@
   margin: 1px;
 }
 .texto-simple-content{
-  color: gray;
-  margin: 20px
+  color: #090a0e;
+  margin: 20px;
+  font-family: 'Mukta', sans-serif;
+}
+h4{
+  color: #800040;
+  font-family: 'Mukta', sans-serif;
+}
+ion-card-header{
+  color: #f4f4f4;
+}
+.lista-cursos{
+  margin: auto
+}
+.cursos{
+  margin: auto;
+  padding: 1rem;
+  margin-bottom: 10px;
+  background-color: #090a0e;
+  border-radius: 10px 20px 20px 20px;
+}
+.lista-cursos{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.crear-curso{
+  font-family: 'Mukta', sans-serif;
+  margin: 0;
+  border-radius: 30px 30px 30px 30px;
 }

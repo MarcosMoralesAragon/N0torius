@@ -1,0 +1,14 @@
+.grid-botones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.card-crear{
+    margin: 5px;
+    margin-top: 20px;
+}
+.card-obligatorio{
+    padding: 5px;
+}
+.mensajeCamposObligatorios{
+    color: red;
+}
