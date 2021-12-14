@@ -14,6 +14,8 @@ La aplicación tiene como objetivo
 |Servicios   |    5    |
 |Modelos     |    3    |
 
+Pincha en la siguiente imagen para ir al video explicativo
+
 [![video_explicativo](/capturas/video.png)](https://youtu.be/EAXtfHgtRBg)
 
 
