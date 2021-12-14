@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Curso } from 'src/app/models/curso/curso';
+import { Observable, of } from 'rxjs';
+import { Storage } from '@capacitor/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import { Curso } from 'src/app/models/curso/curso';
 export class CursoServiceService {
 
   cursoQueMostrar
+  cursoCounter: number = 0;
   cursos: Curso[] = [
     {
         "id": 0,
@@ -22,9 +24,8 @@ export class CursoServiceService {
     }
 ]
 
-  constructor(private http:HttpClient) { 
-    // this.http.get<Curso[]>("../../../assets/data/cursos.json").subscribe(data => this.cursos = data);
-    // console.log(this.cursos)
+  constructor() {
+    
   }
 
   getCursos(){
@@ -32,6 +33,9 @@ export class CursoServiceService {
   }
   setCursoVer(id: number){
     this.cursoQueMostrar = id; 
+  }
+  addCurso(curso : Curso){
+    this.getCursos().push(curso)
   }
   getCursoVer(){
     return this.cursoQueMostrar

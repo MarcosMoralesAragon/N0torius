@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Examen } from 'src/app/models/examen/examen';
+import { Storage } from '@capacitor/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -44,8 +45,8 @@ export class ExamenServiceService {
     }
   ]
 
-  constructor() { }
-
+  constructor() { 
+  }
   getExamenes(){
     return this.examenes
   }

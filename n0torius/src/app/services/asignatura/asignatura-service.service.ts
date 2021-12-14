@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Asignatura } from 'src/app/models/asignatura/asignatura';
 import { Examen } from 'src/app/models/examen/examen';
-import { CursoServiceService } from '../curso/curso-service.service';
 import { ExamenServiceService } from '../examen/examen-service.service';
+import { Storage } from '@capacitor/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -83,6 +83,7 @@ export class AsignaturaServiceService {
     }
   ]
   constructor(private examenService : ExamenServiceService) {
+    
   }
 
   getAsignaturas(){

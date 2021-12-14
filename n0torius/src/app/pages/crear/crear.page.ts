@@ -58,18 +58,22 @@ export class CrearPage implements OnInit {
     if(this.comprobarCamposObligatorios()){
       if(this.idCurso){ // Comprobación para saber si viene de una llamada desde dentro de un curso o desde fuera de uno
         if(this.queSeEstaCreando == "Asignatura"){
+
           var nuevaAsignatura : Asignatura = new Asignatura()
           nuevaAsignatura = this.rellenarDatosAsignatura(nuevaAsignatura)
           this.asignaturaService.addAsignatura(nuevaAsignatura)
+
         } else if (this.queSeEstaCreando == "Examen"){
+
           var nuevoExamen : Examen = new Examen()
           nuevoExamen = this.rellenarDatosExamen(nuevoExamen)
           this.examenService.addExamen(nuevoExamen)
+
         }
       }else{
         var nuevoCurso : Curso = new Curso()
         nuevoCurso = this.rellenarDatosCurso(nuevoCurso)
-        this.cursoService.getCursos().push(nuevoCurso)
+        this.cursoService.addCurso(nuevoCurso)
       }
       this.volver()
     } else {
